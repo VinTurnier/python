@@ -28,15 +28,31 @@ class LowestCommonAncestor(object):
 
 	def lca(self, x: TreeNode, y:TreeNode):
 		root = self.root
-		return self._lca(root,x,y)
+		ancestor = self._lca(root,x,y)
+		if ancestor:
+			return ancestor.val
 
 	def _lca(self, root: TreeNode, x: TreeNode, y: TreeNode):
 		if root.val == None:
 			return None
-		if root.val == x.val or root.val = y.val:
+		if root.val == x.val or root.val == y.val:
 			return root
 
 		leftside = self._lca(root.left,x,y)
 		rightside = self._lca(root.right,x,y)
 
-		if 
+		if leftside == None:
+			return rightside
+		if rightside == None:
+			return leftside
+
+		return root
+
+
+if __name__ == "__main__":
+	root = TreeNode(6)
+	root.left = TreeNode(5)
+	root.right = TreeNode(7)
+	lca = LowestCommonAncestor(root)
+	print(lca.lca(root.left,root.right))
+

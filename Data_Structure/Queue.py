@@ -26,6 +26,12 @@ class Queue(object):
 		
 		return self.stack2.pop()
 
+	def peek(self):
+		if len(self.stack2)==0:
+			return self.stack1.first()
+		else:
+			return self.stack2.peek()
+
 
 if __name__ == "__main__":
 
@@ -33,10 +39,9 @@ if __name__ == "__main__":
 	q.enQueue(1)
 	q.enQueue(3)
 	q.enQueue(5)
+	print(q.peek())
 
-	print(q.deQueue())
-	print(q.deQueue())
+	q.deQueue()
+	q.deQueue()
 	q.enQueue(6)
-	print(q.deQueue())
-	print(q.deQueue())
-	print(q.deQueue())
+	print(q.peek())

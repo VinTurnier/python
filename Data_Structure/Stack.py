@@ -33,6 +33,11 @@ class Stack(object):
 			return None
 		return self.stack[len(self.stack)-1]
 
+	def first(self):
+		if self.isEmpty():
+			return None
+		return self.stack[0]
+
 	def isEmpty(self):
 		if self.stack == []:
 			return True

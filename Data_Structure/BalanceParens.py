@@ -17,13 +17,17 @@ class BalanceParens(object):
 				self.stack.push(paren_string_list[i])
 			
 			else:
-				if paren_string_list[i] == 
-				self.stack.pop()
+				if (paren_string_list[i] == ')' and self.stack.peek() != '(')\
+					or (paren_string_list[i] == '}' and self.stack.peek() != '{')\
+					or (paren_string_list[i] == ']' and self.stack.peek() != '['):
+					return False
+				else:
+					self.stack.pop()
 
 		return self.stack.isEmpty()
 
 
 if __name__=="__main__":
-	string = ["(","[",")","]",")"]
+	string = ['{','(',')','[','{','(','{','}',')','[',']','(',')','}',']','(','[',']',')','}']
 	bp = BalanceParens()
 	print(bp.solution(string))
