@@ -13,4 +13,5 @@ To help you understands how classes work in python and how they are important
  
  | Method | Description|
  |:-------|:-----------|
+ |__init__()|Initializes Account with an Id|
  
