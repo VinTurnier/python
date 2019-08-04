@@ -12,5 +12,5 @@ To help you understands how classes work in python and how they are important
  Account Class
  
  | Method | Description|
- |+-------|+-----------|
+ |:-------|:-----------|
  
