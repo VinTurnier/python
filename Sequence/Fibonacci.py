@@ -18,7 +18,7 @@ class Fibonacci(object):
 
 		arr = [0,1]
 		self.recursion(len(arr)-1,len(arr)-2,0,num,arr)
-		return arr
+		return arr[num]
 
 	def recursion(self,n1,n2,curent_num,num,arr):
 		if curent_num<=num-2:
@@ -36,6 +36,19 @@ class Fibonacci(object):
 		else:
 			return self.sequence2(n-1)+self.sequence2(n-2)
 
+
+	def sequence3(self,n, arr):
+		if n<0:
+			return "ERROR: Entry must be > 0"
+		elif n == 1:
+			return 0
+		elif n == 2:
+			return 1
+		else:
+			arr[n] = self.sequence3(n-1,arr)+self.sequence3(n-2,arr)
+		return arr[n]
+
+
 # let n = 4
 # sequence2(4-1) + sequence2(4-2) 
 # |				   |	
@@ -51,3 +64,5 @@ if __name__ == "__main__":
 	fb = Fibonacci()
 	print(fb.sequence1(20))
 	print(fb.sequence2(4))
+	arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	print(fb.sequence3(20,arr))
