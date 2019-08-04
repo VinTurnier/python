@@ -15,7 +15,7 @@ from Bank import Account
 class User(object):
 
 	def __init__(self,fName,lName,age,email):
-		self.fistName = fName
+		self.firstName = fName
 		self.lastName = lName
 		self.age = age
 		self.email = email
@@ -45,6 +45,7 @@ if __name__ == "__main__":
 
 	user2 = User("user","example",34,"user@example.com")
 	user2.createAccount(232324)
+	print(user2.getFullName())
 	user2.account.deposit(2300)
 	# See the relationships and how elegant a class can make a code
 	# makes it verry readable 
